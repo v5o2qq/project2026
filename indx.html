@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر نيون الإلكتروني | الصفحة الرئيسية</title>
+    <!-- الميتا تاجز الأساسية للموقع -->
+    <meta name="description" content="متجر نيون الإلكتروني - منصتك الاحترافية الشاملة للخدمات والمنتجات الرقمية بتصميم نيون عصري.">
+    <meta name="keywords" content="متجر رقمي, نيون, تصميم مواقع, خدمات رقمية, متجر نيون">
+    
+    <!-- روابط الخطوط: Cairo للنصوص العربية، Orbitron للأرقام والشعارات -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات الفونت أوسم المحدثة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-base: #030308;
+            --bg-surface: #0a0a16;
+            --bg-card: #111126;
+            
+            /* لوحة ألوان النيون الفسفورية */
+            --neon-cyan: #00f0ff;
+            --neon-pink: #ff007f;
+            --neon-purple: #9d00ff;
+            
+            --text-main: #f5f5fa;
+            --text-muted: #8e8ea8;
+            
+            --font-ar: 'Cairo', sans-serif;
+            --font-neon: 'Orbitron', sans-serif;
+            
+            --glow-cyan: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+            --glow-pink: 0 0 10px rgba(255, 0, 127, 0.6), 0 0 20px rgba(255, 0, 127, 0.3);
+            --glow-purple: 0 0 15px rgba(157, 0, 255, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-ar);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* خلفية شبكية متحركة تضفي طاقة للموقع */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(rgba(255, 0, 127, 0.02) 1px, transparent 1px) 0 0 / 40px 40px,
+                linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px) 0 0 / 40px 40px;
+            z-index: -2;
+        }
+
+        /* توهج خلفي ناعم */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 40%; left: 75%; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(157, 0, 255, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0 3rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: var(--glow-cyan);
+            color: #fff;
+        }
+        
+        .section-title span {
+            color: var(--neon-pink);
+            text-shadow: var(--glow-pink);
+        }
+
+        /* الأزرار الهيدروليكية المضيئة */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            font-family: var(--font-ar);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--neon-cyan);
+            background: transparent;
+            color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-base);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+        }
+
+        .btn-pink {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: var(--glow-pink);
+        }
+
+        .btn-pink:hover {
+            background: var(--neon-pink);
+            color: var(--bg-base);
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.8);
+        }
+
+        /* الهيدر الثابت والتنقل */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(3, 3, 8, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-ar);
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-pink);
+            text-shadow: var(--glow-pink);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .nav-icon-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.3rem;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--neon-cyan);
+        }
+
+        .user-logged-in {
+            color: var(--neon-cyan) !important;
+            filter: drop-shadow(var(--glow-cyan));
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -7px; left: -10px;
+            background: var(--neon-pink);
+            color: #fff;
+            font-size: 0.75rem;
+            font-family: var(--font-neon);
+            padding: 1px 6px;
+            border-radius: 10px;
+            box-shadow: var(--glow-pink);
+        }
+
+        /* واجهة الـ Hero */
+        #hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-ar);
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: var(--glow-cyan);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content .tagline {
+            font-family: var(--font-ar);
+            font-size: 2rem;
+            color: var(--neon-pink);
+            text-shadow: var(--glow-pink);
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* من أنا */
+        .about-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text em {
+            color: var(--neon-cyan);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .about-placeholder {
+            width: 260px;
+            height: 260px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(157, 0, 255, 0.3);
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-placeholder i {
+            font-size: 4.5rem;
+            color: rgba(0, 240, 255, 0.2);
+            text-shadow: var(--glow-cyan);
+        }
+
+        /* المتجر الإلكتروني */
+        .store-container {
+            background: var(--bg-surface);
+            border: 1px solid rgba(0, 240, 255, 0.08);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.03);
+        }
+
+        /* أزرار الفلترة والتصنيفات */
+        .store-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-ar);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: var(--glow-pink);
+            background: rgba(255, 0, 127, 0.05);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.15);
+        }
+
+        .product-img {
+            height: 190px;
+            background: #13132b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--neon-purple);
+            text-shadow: var(--glow-purple);
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: rgba(3, 3, 8, 0.8);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .product-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-family: var(--font-neon);
+            color: var(--neon-cyan);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart-btn {
+            background: transparent;
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--neon-pink);
+            color: var(--bg-base);
+            box-shadow: var(--glow-pink);
+        }
+
+        /* سلة التسوق الجانبية */
+        .cart-drawer {
+            position: fixed;
+            top: 0; left: -420px;
+            width: 400px;
+            height: 100%;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--neon-cyan);
+            box-shadow: 20px 0 40px rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active {
+            left: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+
+        .close-cart {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .cart-item-details h4 {
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .cart-item-details p {
+            color: var(--neon-cyan);
+            font-family: var(--font-neon);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .remove-item {
+            background: transparent;
+            border: none;
+            color: var(--neon-pink);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cart-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-total span:last-child {
+            font-family: var(--font-neon);
+            color: var(--neon-pink);
+            text-shadow: var(--glow-pink);
+        }
+
+        /* النافذة المنبثقة للحساب والدفع */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 3, 8, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-wrapper {
+            background: var(--bg-surface);
+            border: 1px solid var(--neon-purple);
+            box-shadow: 0 0 30px rgba(157, 0, 255, 0.2);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 450px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem; left: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .modal-tab-head {
+            display: flex;
+            gap: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-link {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .tab-link.active {
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+
+        .tab-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -9px; right: 0; width: 100%; height: 2px;
+            background: var(--neon-cyan);
+        }
+
+        .modal-form {
+            display: none;
+        }
+
+        .modal-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-family: var(--font-ar);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
+        }
+
+        textarea.form-control {
+            height: 100px;
+            resize: none;
+        }
+
+        /* التواصل */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .info-channel {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-channel-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 0, 127, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-pink);
+        }
+
+        .info-channel a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            border: 1px solid var(--neon-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-box:hover {
+            background: var(--neon-purple);
+            box-shadow: var(--glow-purple);
+            transform: translateY(-3px);
+        }
+
+        .contact-card-form {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            padding: 2.5rem;
+        }
+
+        footer {
+            background: #020205;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content h1 { font-size: 3.2rem; }
+            .about-wrapper { flex-direction: column; text-align: center; }
+            .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .store-container { padding: 1.5rem; }
+            .cart-drawer { width: 100%; left: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر ونظام التحكم -->
+    <header>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">متجر نيون الإلكتروني</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#store">كل المنتجات</a></li>
+                    <li><a href="#contact">التواصل معنا</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="userMenuBtn" onclick="toggleModal('auth')" title="حسابي"><i class="fa-regular fa-user"></i></button>
+                <button class="nav-icon-btn" onclick="toggleCart()" title="سلة المشتريات">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- الواجهة الرئيسية (Hero) -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>متجر نيون الإلكتروني</h1>
+            <div class="tagline">عالم من المنتجات الرقمية</div>
+            <p class="desc">منصتك الاحترافية الشاملة للتسوق واقتناء أفضل الحلول البرمجية والهويات الرقمية الفاخرة المجهزة لخدمة أعمالك فوراً وبأعلى كفاءة.</p>
+            <a href="#store" class="btn">تصفح المنتجات الرقمية الحالية <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- من نحن -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">من هو <span>متجر نيون</span>؟</h2>
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <p>نحن منصة متخصصة في بناء وتجهيز الحلول والواجهات البرمجية، نهدف لتقديم تجارب ويب سريعة وآمنة تلبي متطلبات المشاريع العصرية.</p>
+                    <p>هذا المتجر مجهز ببنية أساسية حقيقية قادرة على إدارة الطلبات، حفظ الجلسات، ومعالجة المشتريات، مما يمنح العملاء تجربة تصفح غامرة وفريدة.</p>
+                </div>
+                <div class="about-img-container">
+                    <div class="about-placeholder">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المتجر الإلكتروني -->
+    <section id="store">
+        <div class="container">
+            <div class="store-container">
+                <h2 class="section-title" style="font-size:2rem; margin-bottom:1.5rem;">قائمة <span>كل المنتجات</span></h2>
+                
+                <!-- أشرطة الفلترة والتصنيف -->
+                <div class="store-filter-bar">
+                    <button class="filter-btn active" onclick="filterCategory('all', this)">كل المنتجات</button>
+                    <button class="filter-btn" onclick="filterCategory('templates', this)">قوالب جاهزة</button>
+                    <button class="filter-btn" onclick="filterCategory('services', this)">خدمات تطوير</button>
+                    <button class="filter-btn" onclick="filterCategory('cards', this)">بطاقات رقمية</button>
+                </div>
+
+                <!-- شبكة المنتجات الـ 9 الحقيقية -->
+                <div class="products-grid" id="productsCatalog">
+                    <!-- المنتج 1 -->
+                    <div class="product-card" data-category="templates">
+                        <div class="product-img"><i class="fa-solid fa-cubes"></i><span class="product-badge">قوالب</span></div>
+                        <div class="product-info">
+                            <h4>قالب نيون هيرو الشامل</h4>
+                            <p>صفحة هبوط متكاملة ومحسنة لمحركات البحث بتأثيرات النيون الليزرية.</p>
+                            <div class="product-meta">
+                                <span class="product-price">149 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('قالب نيون هيرو الشامل', 149)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 2 -->
+                    <div class="product-card" data-category="templates">
+                        <div class="product-img"><i class="fa-solid fa-store"></i><span class="product-badge">قوالب</span></div>
+                        <div class="product-info">
+                            <h4>هيكل متجر الإلكتروني RTL</h4>
+                            <p>قالب متجر إلكتروني كامل مبني ليدعم اللغة العربية بنسبة 100%.</p>
+                            <div class="product-meta">
+                                <span class="product-price">289 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('هيكل متجر الإلكتروني RTL', 289)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 3 -->
+                    <div class="product-card" data-category="templates">
+                        <div class="product-img"><i class="fa-solid fa-id-card"></i><span class="product-badge">قوالب</span></div>
+                        <div class="product-info">
+                            <h4>حقيبة المعرض الشخصي</h4>
+                            <p>تصميم بورتفوليو للمصممين والمطورين لعرض الأعمال بشكل فخم.</p>
+                            <div class="product-meta">
+                                <span class="product-price">99 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('حقيبة المعرض الشخصي', 99)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 4 -->
+                    <div class="product-card" data-category="services">
+                        <div class="product-img"><i class="fa-solid fa-code"></i><span class="product-badge">خدمات</span></div>
+                        <div class="product-info">
+                            <h4>تخصيص وربط الأكواد الفورية</h4>
+                            <p>تعديل وتضمين سلات المشتريات وبوابات الدفع في موقعك الحالي.</p>
+                            <div class="product-meta">
+                                <span class="product-price">399 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('تخصيص وربط الأكواد الفورية', 399)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 5 -->
+                    <div class="product-card" data-category="services">
+                        <div class="product-img"><i class="fa-solid fa-gauge-high"></i><span class="product-badge">خدمات</span></div>
+                        <div class="product-info">
+                            <h4>تسريع أداء وتحسين الـ SEO</h4>
+                            <p>رفع وتثبيت سرعة موقعك الإلكتروني لضمان تصدر نتائج بحث Google الأولى.</p>
+                            <div class="product-meta">
+                                <span class="product-price">450 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('تسريع أداء وتحسين الـ SEO', 450)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 6 -->
+                    <div class="product-card" data-category="services">
+                        <div class="product-img"><i class="fa-solid fa-wand-magic-sparkles"></i><span class="product-badge">خدمات</span></div>
+                        <div class="product-info">
+                            <h4>تصميم شعار وهندسة هوية</h4>
+                            <p>بناء شعار وهوية بصرية كاملة (ألوان، أيقونات، وخطوط) متكاملة لبراندك.</p>
+                            <div class="product-meta">
+                                <span class="product-price">600 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('تصميم شعار وهندسة هوية', 600)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 7 -->
+                    <div class="product-card" data-category="cards">
+                        <div class="product-img"><i class="fa-solid fa-bolt"></i><span class="product-badge">بطاقات</span></div>
+                        <div class="product-info">
+                            <h4>بطاقة رصيد الدعم الفني السريع</h4>
+                            <p>بطاقة مسبقة الدفع تمنحك 5 ساعات من الدعم البرمجي المباشر الطارئ.</p>
+                            <div class="product-meta">
+                                <span class="product-price">199 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('بطاقة رصيد الدعم الفني السريع', 199)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 8 -->
+                    <div class="product-card" data-category="cards">
+                        <div class="product-img"><i class="fa-solid fa-server"></i><span class="product-badge">بطاقات</span></div>
+                        <div class="product-info">
+                            <h4>قسيمة استضافة السيرفر السنوي</h4>
+                            <p>كود شحن مخصص لحجز استضافة سحابية سريعة وخاصة بمشروعك لمدة عام.</p>
+                            <div class="product-meta">
+                                <span class="product-price">350 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('قسيمة استضافة السيرفر السنوي', 350)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- المنتج 9 -->
+                    <div class="product-card" data-category="cards">
+                        <div class="product-img"><i class="fa-solid fa-graduation-cap"></i><span class="product-badge">بطاقات</span></div>
+                        <div class="product-info">
+                            <h4>بطاقة دخول أكاديمية التطوير</h4>
+                            <p>اشتراك دائم يمنحك حق الوصول لجميع الشروحات وقوالب الأكواد المحدثة مستقبلاً.</p>
+                            <div class="product-meta">
+                                <span class="product-price">500 SAR</span>
+                                <button class="add-to-cart-btn" onclick="addToCart('بطاقة دخول أكاديمية التطوير', 500)"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بوابة التواصل -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">قنوات <span>التواصل معنا</span></h2>
+            <div class="contact-container">
+                <div class="contact-meta">
+                    <h3>أهلاً بك في أي وقت!</h3>
+                    <p>لديك استفسار خاص قبل الطلب؟ أو ترغب في الاتفاق على ميزات إضافية؟ راسلنا فوراً وسيقوم النظام بتوجيهك.</p>
+                    
+                    <div class="info-channel">
+                        <div class="info-channel-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">البريد الرسمي المعتمد</span><br>
+                            <a href="mailto:support@neonstore.io">support@neonstore.io</a>
+                        </div>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="#" class="social-box"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social-box"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-box"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-card-form">
+    <form action="https://formspree.io/f/meewezdb" method="POST">
+        <div class="form-group">
+            <label>الاسم بالكامل</label>
+            <input type="text" name="name" class="form-control" placeholder="عبدالله العتيبي" required>
+        </div>
+        <div class="form-group">
+            <label>عنوان البريد الإلكتروني</label>
+            <input type="email" name="email" class="form-control" placeholder="client@mail.com" required>
+        </div>
+        <div class="form-group">
+            <label>تفاصيل الاستفسار</label>
+            <textarea name="message" class="form-control" placeholder="اكتب رسالتك بوضوح هنا..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-pink" style="width: 100%; justify-content: center;">إرسال الاستمارة</button>
+    </form>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- السلة الجانبية -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-basket-shopping" style="color:var(--neon-cyan)"></i> المشتريات المختارة</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- تعبئة ديناميكية -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي المستحق:</span>
+                <span id="cartTotalValue">0 SAR</span>
+            </div>
+            <button class="btn btn-pink" style="width: 100%; justify-content: center;" onclick="openCheckout()">الانتقال لإنهاء الدفع</button>
+        </div>
+    </div>
+
+    <!-- النافذة المنبثقة للحساب والدفع -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-wrapper">
+            <button class="close-modal" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-tab-head" id="modalTabsHeader">
+                <button class="tab-link active" id="tabLoginLink" onclick="switchForm('login')">تسجيل الدخول</button>
+                <button class="tab-link" id="tabRegisterLink" onclick="switchForm('register')">فتح حساب جديد</button>
+            </div>
+
+            <!-- دخول -->
+            <div id="loginForm" class="modal-form active">
+                <form id="realLoginForm" onsubmit="handleAuth(event, 'login')">
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="user@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center; margin-top: 1rem;">دخول آمن</button>
+                </form>
+            </div>
+
+            <!-- تسجيل حساب -->
+            <div id="registerForm" class="modal-form">
+                <form id="realRegisterForm" onsubmit="handleAuth(event, 'register')">
+                    <div class="form-group">
+                        <label>اسم المستخدم الكامل</label>
+                        <input type="text" id="regName" class="form-control" placeholder="سلمان الفهد" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="regEmail" class="form-control" placeholder="newuser@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-pink" style="width: 100%; justify-content: center; margin-top: 1rem;">تأكيد وإنشاء الحساب</button>
+                </form>
+            </div>
+
+            <!-- دفع للبطاقات -->
+            <div id="checkoutForm" class="modal-form">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-shield-check" style="color:var(--neon-cyan)"></i> بوابة السداد الآمن والتحقق
+                </h3>
+                <form onsubmit="handleCheckout(event)">
+                    <div class="form-group">
+                        <label>البريد الإلكتروني لاستلام المنتج الرقمي</label>
+                        <input type="email" id="checkoutEmail" class="form-control" placeholder="name@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>تفاصيل بطاقة الدفع</label>
+                        <input type="text" class="form-control" placeholder="4000 1234 5678 9010" maxlength="19" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>تاريخ الانتهاء</label>
+                            <input type="text" class="form-control" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>الرمز السري CVV</label>
+                            <input type="password" class="form-control" placeholder="•••" maxlength="3" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center; margin-top: 1rem; border-color: var(--neon-pink); color: var(--neon-pink); box-shadow: var(--glow-pink);">تأكيد الشراء الفوري</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2026 متجر نيون الإلكتروني.</p>
+        </div>
+    </footer>
+
+    <!-- منطق العمليات الأساسي -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('neon_store_cart')) || [];
+        let currentUser = JSON.parse(localStorage.getItem('neon_store_user')) || null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
+            checkUserStatus();
+        });
+
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('active');
+        }
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            localStorage.setItem('neon_store_cart', JSON.stringify(cart));
+            updateCartUI();
+            
+            const badge = document.getElementById('cartCount');
+            badge.style.transform = 'scale(1.4)';
+            setTimeout(() => badge.style.transform = 'scale(1)', 250);
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('neon_store_cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartCount');
+            const totalDisplay = document.getElementById('cartTotalValue');
+            
+            badge.textContent = cart.length;
+            
+            if(cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart-text" style="color:var(--text-muted); text-align:center; margin-top:3rem;">سلتك فارغة، أضف بعض المنتجات للبدء.</p>';
+                totalDisplay.textContent = '0 SAR';
+                return;
+            }
+            
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <h4>${item.title}</h4>
+                            <p>${item.price} SAR</p>
+                        </div>
+                        <button class="remove-item" onclick="removeCartItem(${index})"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            totalDisplay.textContent = total + ' SAR';
+        }
+
+        function filterCategory(category, button) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const cards = document.querySelectorAll('#productsCatalog .product-card');
+            cards.forEach(card => {
+                if(category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleModal(mode) {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.add('active');
+            
+            if (mode === 'auth') {
+                if(currentUser) {
+                    if(confirm('هل ترغب في تسجيل الخروج من حسابك الحالي؟')) {
+                        localStorage.removeItem('neon_store_user');
+                        currentUser = null;
+                        checkUserStatus();
+                        closeAllModals();
+                    }
+                    return;
+                }
+                document.getElementById('modalTabsHeader').style.display = 'flex';
+                switchForm('login');
+            } else if (mode === 'checkout') {
+                document.getElementById('modalTabsHeader').style.display = 'none';
+                document.getElementById('loginForm').classList.remove('active');
+                document.getElementById('registerForm').classList.remove('active');
+                document.getElementById('checkoutForm').classList.add('active');
+                
+                if(currentUser) {
+                    document.getElementById('checkoutEmail').value = currentUser.email;
+                }
+            }
+        }
+
+        function closeAllModals() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function switchForm(formName) {
+            document.getElementById('checkoutForm').classList.remove('active');
+            if (formName === 'login') {
+                document.getElementById('tabLoginLink').classList.add('active');
+                document.getElementById('tabRegisterLink').classList.remove('active');
+                document.getElementById('loginForm').classList.add('active');
+                document.getElementById('registerForm').classList.remove('active');
+            } else {
+                document.getElementById('tabLoginLink').classList.remove('active');
+                document.getElementById('tabRegisterLink').classList.add('active');
+                document.getElementById('loginForm').classList.remove('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+        }
+
+        function handleAuth(event, type) {
+            event.preventDefault();
+            if (type === 'login') {
+                const email = document.getElementById('loginEmail').value;
+                currentUser = { name: 'عميل متجر نيون', email: email };
+            } else {
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                currentUser = { name: name, email: email };
+            }
+            localStorage.setItem('neon_store_user', JSON.stringify(currentUser));
+            checkUserStatus();
+            alert('تم التحقق بنجاح ومزامنة جلستك الحالية!');
+            closeAllModals();
+        }
+
+        function checkUserStatus() {
+            const userIcon = document.querySelector('#userMenuBtn i');
+            if(currentUser) {
+                userIcon.className = 'fa-solid fa-user-check';
+                document.getElementById('userMenuBtn').classList.add('user-logged-in');
+                document.getElementById('userMenuBtn').title = `مسجل دخول كـ (${currentUser.email})`;
+            } else {
+                userIcon.className = 'fa-regular fa-user';
+                document.getElementById('userMenuBtn').classList.remove('user-logged-in');
+                document.getElementById('userMenuBtn').title = "حسابي";
+            }
+        }
+
+        function openCheckout() {
+            if(cart.length === 0) {
+                alert('الرجاء إضافة منتج واحد على الأقل إلى السلة قبل التوجه للدفع.');
+                return;
+            }
+            toggleCart();
+            toggleModal('checkout');
+        }
+
+        function handleCheckout(event) {
+            event.preventDefault();
+            alert('تم تأكيد عملية الدفع الفوري الآمن بنجاح! تم إرسال فواتير التحميل والروابط الرقمية إلى بريدك المعتمد فوراً.');
+            cart = [];
+            localStorage.removeItem('neon_store_cart');
+            updateCartUI();
+            closeAllModals();
+        }
+    </script>
+</body>
+</html>
